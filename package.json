@@ -1,0 +1,12 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Slashgear/advent-of-code.git",
+  "author": "Slashgear <antoine395.caron@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "lerna": "^3.22.1"
+  }
+}
