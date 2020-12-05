@@ -4,9 +4,18 @@ const _ = require("lodash");
 
 const read = util.promisify(fs.readFile);
 
-const validKeys = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid", "cid"].sort();
+const validKeys = [
+  "byr",
+  "iyr",
+  "eyr",
+  "hgt",
+  "hcl",
+  "ecl",
+  "pid",
+  "cid",
+].sort();
 
-const isValid = passport => {
+const isValid = (passport) => {
   const missingKeys = _.xor(validKeys, Object.keys(passport));
 
   if (missingKeys.length > 1) {
@@ -25,9 +34,11 @@ const run = async () => {
   let countValid = 0;
   const passports = values
     .split("\n\n")
-    .map(passport => passport.split("\n").map(passport => passport.split(" ")))
-    .map(passport => _.flatten(passport))
-    .map(passport =>
+    .map((passport) =>
+      passport.split("\n").map((passport) => passport.split(" "))
+    )
+    .map((passport) => _.flatten(passport))
+    .map((passport) =>
       passport.reduce((acc, value) => {
         const split = value.split(":");
         acc[split[0]] = split[1];
@@ -36,7 +47,7 @@ const run = async () => {
       }, {})
     );
 
-  passports.forEach(passport => {
+  passports.forEach((passport) => {
     const validity = isValid(passport);
     if (validity) {
       countValid++;
@@ -47,4 +58,3 @@ const run = async () => {
 };
 
 run();
-

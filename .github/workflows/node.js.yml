@@ -16,7 +16,7 @@ jobs:
       - name: Yarn cache
         uses: actions/cache@v2
         with:
-          path: '**/node_modules'
+          path: "**/node_modules"
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: Use Node.js ${{ matrix.node-version }}
@@ -24,4 +24,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
+      - run: yarn prettier --check .
       - run: yarn start
