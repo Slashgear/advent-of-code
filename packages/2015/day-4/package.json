@@ -1,0 +1,12 @@
+{
+  "name": "@2015/day-4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index"
+  },
+  "dependencies": {
+    "crypto-js": "^4.0.0"
+  }
+}
