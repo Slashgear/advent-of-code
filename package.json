@@ -10,7 +10,7 @@
     "lerna": "^3.22.1"
   },
   "scripts": {
-    "start": "lerna run start"
+    "start": "lerna run start --stream"
   },
   "devDependencies": {
     "husky": "^4.3.4",
