@@ -19,7 +19,6 @@ const run = async () => {
         );
         process.exit(0);
       }
-      console.log(`A ${values[i]}, B ${values[j]}, Sum ${sum}`);
     }
   }
   console.log("Not found");
