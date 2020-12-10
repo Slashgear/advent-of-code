@@ -25,7 +25,7 @@ jobs:
           node-version: 14.x
       - run: yarn install
       - run: yarn prettier --check .
-      - run: yarn start --scope ${{ matrix.scope }}
+      - run: yarn start --scope ${{ matrix.scope }}/*
       - uses: actions/upload-artifact@v2
         with:
           name: perf-profiler-${{ matrix.scope }}
