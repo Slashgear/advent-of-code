@@ -10,6 +10,7 @@
     "lerna": "^3.22.1"
   },
   "scripts": {
+    "postinstall": "yarn lerna bootstrap",
     "start": "lerna run start --stream --profile --profile-location=profile/",
     "poststart": "prettier --write profile"
   },
