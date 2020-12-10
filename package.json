@@ -10,7 +10,8 @@
     "lerna": "^3.22.1"
   },
   "scripts": {
-    "start": "lerna run start --stream --profile --profile-location=profile/"
+    "start": "lerna run start --stream --profile --profile-location=profile/",
+    "poststart": "prettier --write profile"
   },
   "devDependencies": {
     "husky": "^4.3.4",
