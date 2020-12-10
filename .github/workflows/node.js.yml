@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x]
+        scope: ["@2015", "@2019", "@2020"]
 
     steps:
       - uses: actions/checkout@v2
@@ -19,14 +19,14 @@ jobs:
           path: "**/node_modules"
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 14.x
       - run: yarn install
       - run: yarn prettier --check .
-      - run: yarn start
+      - run: yarn start --scope ${{ matrix.scope }}
       - uses: actions/upload-artifact@v2
         with:
-          name: perf-profiler
+          name: perf-profiler-${{ matrix.scope }}
           path: profile/*.json
