@@ -1,0 +1,12 @@
+{
+  "name": "@2015/day-05",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20"
+  }
+}

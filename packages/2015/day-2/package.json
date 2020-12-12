@@ -1,9 +1,0 @@
-{
-  "name": "@2015/day-2",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "scripts": {
-    "start": "node index"
-  }
-}
