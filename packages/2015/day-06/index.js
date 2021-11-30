@@ -6,11 +6,10 @@ const { inRange } = require("lodash");
 const read = util.promisify(fs.readFile);
 
 const parseRule = (string) => {
-  const {
-    groups,
-  } = /^(?<action>turn on|turn off|toggle) (?<minX>\d{1,3}),(?<minY>\d{1,3}) through (?<maxX>\d{1,3}),(?<maxY>\d{1,3})$/.exec(
-    string
-  );
+  const { groups } =
+    /^(?<action>turn on|turn off|toggle) (?<minX>\d{1,3}),(?<minY>\d{1,3}) through (?<maxX>\d{1,3}),(?<maxY>\d{1,3})$/.exec(
+      string
+    );
   return {
     minX: Number(groups.minX),
     maxX: Number(groups.maxX),

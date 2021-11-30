@@ -5,11 +5,8 @@ const _ = require("lodash");
 
 const parseFile = async () => {
   const file = await read("./data.txt", "utf8");
-  const [
-    rulesAsString,
-    currentTicketAsString,
-    otherTicketAsString,
-  ] = file.split("\n\n");
+  const [rulesAsString, currentTicketAsString, otherTicketAsString] =
+    file.split("\n\n");
 
   const rules = rulesAsString
     .split("\n")
@@ -44,8 +41,10 @@ const parseFile = async () => {
 const loadData = parseFile();
 
 const rulesAsPredicates = (rules) => {
-  return rules.map(({ minA, maxA, minB, maxB }) => (value) =>
-    (value >= minA && value <= maxA) || (value >= minB && value <= maxB)
+  return rules.map(
+    ({ minA, maxA, minB, maxB }) =>
+      (value) =>
+        (value >= minA && value <= maxA) || (value >= minB && value <= maxB)
   );
 };
 

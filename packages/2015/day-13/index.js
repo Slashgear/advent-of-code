@@ -6,11 +6,10 @@ const _ = require("lodash");
 const parseInput = async () => {
   const file = await read("./data.txt", "utf8");
   return file.split("\n").reduce((acc, ligne) => {
-    const {
-      groups,
-    } = /(?<p1>\w+) would (?<sign>lose|gain) (?<value>\d+) happiness units by sitting next to (?<p2>\w+)./.exec(
-      ligne
-    );
+    const { groups } =
+      /(?<p1>\w+) would (?<sign>lose|gain) (?<value>\d+) happiness units by sitting next to (?<p2>\w+)./.exec(
+        ligne
+      );
     _.set(
       acc,
       [groups.p1, groups.p2],
