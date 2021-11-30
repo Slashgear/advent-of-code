@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        scope: ["@2015", "@2019", "@2020"]
+        scope: ["@2015", "@2019", "@2020", "@2021"]
 
     steps:
       - uses: actions/checkout@v2
