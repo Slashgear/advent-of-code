@@ -41,7 +41,7 @@ const run = async () => {
     Array.from(
       difference(lastWinBoard.flat(), lastBoardIteration).values()
     ).reduce((a, b) => a + b, 0) *
-    lastBoardIteration[lastBoardIteration.length - 1]
+      lastBoardIteration[lastBoardIteration.length - 1]
   );
 };
 

@@ -24,7 +24,6 @@ const run = async () => {
       (a, b) => a + b
     ) * iteration[iteration.length - 1]
   );
-
 };
 
 run();

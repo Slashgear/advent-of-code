@@ -34,7 +34,7 @@ const run = async () => {
   );
 
   const result = process(values);
-  console.log({result});
+  console.log({ result });
 };
 
-run()
+run();

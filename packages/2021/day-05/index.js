@@ -4,7 +4,7 @@ const run = async () => {
   const input = fs.readFileSync("./data.txt").toString("utf-8");
   const parseRegexp = /(?<x1>\d+),(?<y1>\d+) -> (?<x2>\d+),(?<y2>\d+)/;
 
-  const values = input.split('\n').map(row => {
+  const values = input.split("\n").map((row) => {
     const {
       groups: { x1, x2, y1, y2 },
     } = parseRegexp.exec(row);
@@ -14,13 +14,10 @@ const run = async () => {
       x2: parseInt(x2, 10),
       y1: parseInt(y1, 10),
       y2: parseInt(y2, 10),
-    }
+    };
   });
 
-
-  const filteredSegments = values.filter(
-    (s) => s.x1 === s.x2 || s.y1 === s.y2
-  );
+  const filteredSegments = values.filter((s) => s.x1 === s.x2 || s.y1 === s.y2);
 
   let count = 0;
   const memory = new Map();
