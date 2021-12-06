@@ -1,0 +1,10 @@
+{
+  "name": "@2021/day-05",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "poststart": "node part2.js"
+  }
+}
