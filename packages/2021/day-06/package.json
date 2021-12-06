@@ -1,0 +1,13 @@
+{
+  "name": "@2021/day-06",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "poststart": "node part2.js"
+  }
+}
