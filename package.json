@@ -15,7 +15,7 @@
     "poststart": "prettier --write profile"
   },
   "devDependencies": {
-    "husky": "^7.0.4",
+    "husky": "^8.0.1",
     "prettier": "2.5.1",
     "pretty-quick": "^3.1.2"
   }
